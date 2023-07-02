@@ -22,3 +22,6 @@ jobs:
 
       - name: Build the Docker image
         run: bash build-ci.sh
+
+      - name: Test Docker image
+        run: bash test.sh
