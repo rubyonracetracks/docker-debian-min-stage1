@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
   schedule:
-    - cron: '17 7,19 * * *'
+    - cron: '13 7,19 * * *'
 
 jobs:
   build:
@@ -32,4 +32,24 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-        # if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Publish the Docker image
+        run: source variables.sh && docker push $DOCKER_IMAGE:latest
+        if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Delete containers older than a week
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: docker-debian-$SUITE-min-stage1
+          cut-off: A week ago UTC
+          account-type: org
+          org-name: rubyonracetracks
+          keep-at-least: 1
+          untagged-only: true
+          token: ${{ secrets.SPECIAL_TOKEN }}
+        if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Log out of the Docker container registry
+        run: docker logout ghcr.io
+        if: ${{ github.ref == 'refs/heads/main' }}
