@@ -1,4 +1,4 @@
-[![CI](https://github.com/rubyonracetracks/docker-debian-min-stage1/actions/workflows/build.yml/badge.svg)](https://github.com/rubyonracetracks/docker-debian-min-stage1/actions/workflows/build.yml)
+[![Build](https://github.com/rubyonracetracks/docker-debian-min-stage1/actions/workflows/build.yml/badge.svg)](https://github.com/rubyonracetracks/docker-debian-min-stage1/actions/workflows/build.yml)
 
 # Docker Debian - Minimal - Stage 1
 
