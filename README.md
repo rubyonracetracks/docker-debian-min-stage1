@@ -14,10 +14,12 @@ This repository is used for building the Stage 1 Minimal Debian Docker images fo
 * Sudo
 * A regular user with the username "winner" and sudo access
 * Nano editor
+* Git version control
 * Time stamp file, automatically displayed during every login
 
 ## What's the Point?
 * This Docker image is a basic building block for all other Docker images for [Ruby on Racetracks](https://www.rubyonracetracks.com/).
+* This Docker image is a basic building block used in repositories for installing certain tools in a Debian system.
 * This Docker image is deliberately kept small in to minimize the time needed for building, uploading, and downloading this image.  This is useful for getting quick feedback when experimenting.
 
 ## More Information
