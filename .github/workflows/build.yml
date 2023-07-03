@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        CODE_NAME: ['bullseye', 'bookworm', 'trixie', 'sid']
+        CODE_NAME: ['bookworm', 'trixie', 'sid']
         
     env:
       SUITE: ${{ matrix.CODE_NAME }}
@@ -50,6 +50,6 @@ jobs:
       #    token: ${{ secrets.SPECIAL_TOKEN }}
       #  if: ${{ github.ref == 'refs/heads/main' }}
 
-      # - name: Log out of the Docker container registry
-      #   run: docker logout ghcr.io
-      #   if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Log out of the Docker container registry
+        run: docker logout ghcr.io
+        if: ${{ github.ref == 'refs/heads/main' }}
