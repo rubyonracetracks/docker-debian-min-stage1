@@ -10,5 +10,5 @@ export OWNER='rubyonracetracks'
 export DISTRO='debian'
 export SUITE=`cat tmp/suite.txt`
 export REGULAR_USER='winner'
-export DOCKER_IMAGE="ghcr.io/$OWNER/docker-$DISTRO-$SUITE-$ABBREV"
+export DOCKER_IMAGE="ghcr.io/$OWNER/image-$DISTRO-$SUITE-$ABBREV"
 export DOCKER_CONTAINER="container-$DISTRO-$SUITE-$ABBREV"
