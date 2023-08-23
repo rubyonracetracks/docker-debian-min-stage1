@@ -26,6 +26,11 @@ echo '##########################'
 echo "BEGIN $ABBREV-root actions"
 echo '##########################'
 
+# Add adduser
+echo '--------------------------'
+echo 'apt-get install -y adduser'
+apt-get install -y adduser
+
 # Adding user
 REGULAR_USER='<REGULAR_USER>'
 echo '----------------------------------------------------'
