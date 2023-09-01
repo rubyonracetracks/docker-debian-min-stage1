@@ -42,7 +42,7 @@ jobs:
         uses: snok/container-retention-policy@v2
         with:
           image-names: docker-debian-$SUITE-min-stage1
-          cut-off: A week ago UTC
+          cut-off: A day ago UTC
           account-type: org
           org-name: rubyonracetracks
           keep-at-least: 1
