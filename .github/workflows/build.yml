@@ -41,7 +41,7 @@ jobs:
       - name: Delete containers older than a week
         uses: snok/container-retention-policy@v2
         with:
-          image-names: docker-debian-*-min-stage1
+          image-names: docker-debian-bookworm-min-stage1, docker-debian-trixie-min-stage1, docker-debian-sid-min-stage1
           cut-off: A week ago UTC
           account-type: org
           org-name: rubyonracetracks
